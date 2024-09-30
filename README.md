@@ -73,4 +73,4 @@ O conjunto de dados utilizado está no arquivo **`vehicles.csv`**, contendo info
 
 A visualização interativa do aplicativo está disponível online. **Acesse através deste link** para ver o projeto em ação:
 
-🔗 **[Visualizar Aplicativo no Render]([https://your-render-link.com](https://vehicles-project-sprint5.onrender.com))**
+🔗 **Visualizar Aplicativo no Render: [https://vehicles-project-sprint5.onrender.com](https://vehicles-project-sprint5.onrender.com)**
