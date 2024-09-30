@@ -1,3 +1,4 @@
+# Versão Inicial
 '''import pandas as pd
 import plotly.express as px
 import streamlit as st
@@ -21,6 +22,7 @@ if build_scatter:
     fig_scatter = px.scatter(car_data, x="odometer", y="price", title="Dispersão: Odometer vs Preço")
     st.plotly_chart(fig_scatter, use_container_width=True)
 '''
+# Versão melhorada
 import pandas as pd
 import plotly.express as px
 import streamlit as st
@@ -28,42 +30,85 @@ import streamlit as st
 # Lendo o arquivo CSV
 car_data = pd.read_csv('vehicles.csv')
 
-# Caixas de seleção para selecionar o gráfico a ser criado
-build_histogram = st.checkbox('Criar um histograma de quilometragem (odometer)')
-build_scatter = st.checkbox('Criar um gráfico de dispersão (odometer vs price)')
-build_price_hist = st.checkbox('Criar um histograma de preço (price)')
-build_model_bar = st.checkbox('Criar gráfico de barras para contagem de modelos')
-build_box_plot = st.checkbox('Criar box plot de preço por tipo de combustível')
+# Configurações gerais do aplicativo
+st.set_page_config(page_title="Análise de Veículos", layout="wide")
 
-# Criando histograma se a caixa de seleção for marcada
-if build_histogram:
-    st.write('Criando um histograma para o conjunto de dados de anúncios de vendas de carros (quilometragem)')
-    fig_hist = px.histogram(car_data, x="odometer", title="Distribuição de Quilometragem (Odometer)")
-    st.plotly_chart(fig_hist, use_container_width=True)
+# Cabeçalho principal
+st.title('Análise Exploratória de Veículos Usados')
 
-# Criando gráfico de dispersão se a caixa de seleção for marcada
-if build_scatter:
-    st.write('Criando um gráfico de dispersão para o conjunto de dados de anúncios de vendas de carros (odometer vs price)')
-    fig_scatter = px.scatter(car_data, x="odometer", y="price", title="Dispersão: Odometer vs Preço")
-    st.plotly_chart(fig_scatter, use_container_width=True)
+# Subcabeçalho
+st.header('Visualização de Dados de Veículos')
 
-# Criando histograma de preço
-if build_price_hist:
-    st.write('Criando um histograma para o preço dos veículos')
-    fig_price_hist = px.histogram(car_data, x="price", title="Distribuição de Preços")
-    st.plotly_chart(fig_price_hist, use_container_width=True)
+# Exibindo uma breve descrição
+st.write("""
+    Este aplicativo web permite a visualização e análise exploratória de um conjunto de dados de veículos usados.
+    Você pode selecionar gráficos para visualizar a distribuição da quilometragem, do preço, e outros atributos dos veículos.
+""")
 
-# Gráfico de barras para contagem de modelos
-if build_model_bar:
-    st.write('Criando um gráfico de barras para mostrar a contagem de modelos de veículos')
-    fig_model_bar = px.bar(car_data['model'].value_counts().reset_index(),
-                           x='index', y='model', title="Contagem de Modelos de Veículos",
-                           labels={'index': 'Modelo', 'model': 'Contagem'})
-    st.plotly_chart(fig_model_bar, use_container_width=True)
+# Seções para os gráficos
+st.subheader('Escolha as visualizações de gráficos')
 
-# Criando box plot de preço por tipo de combustível
-if build_box_plot:
-    st.write('Criando um box plot para comparar preço por tipo de combustível')
-    fig_box = px.box(car_data, x="fuel", y="price", title="Preço por Tipo de Combustível",
-                     labels={'fuel': 'Tipo de Combustível', 'price': 'Preço'})
-    st.plotly_chart(fig_box, use_container_width=True)
+# Organizando as opções de gráficos em colunas para melhor layout
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    # Botão para criar o histograma da quilometragem (odometer)
+    if st.button('Criar Histograma de Quilometragem'):
+        st.write('Distribuição da quilometragem dos veículos')
+        fig_odometer_hist = px.histogram(car_data, x='odometer', color_discrete_sequence=['#1f77b4'],
+                                         title='Distribuição da Quilometragem (Odometer)')
+        st.plotly_chart(fig_odometer_hist, use_container_width=True)
+
+with col2:
+    # Botão para criar o gráfico de dispersão entre quilometragem (odometer) e preço (price)
+    if st.button('Criar Gráfico de Dispersão (Odometer vs Price)'):
+        st.write('Dispersão: Relação entre Quilometragem e Preço')
+        fig_scatter = px.scatter(car_data, x='odometer', y='price', color='condition',
+                                 title='Dispersão: Odometer vs Preço', 
+                                 color_discrete_sequence=px.colors.qualitative.Vivid)
+        st.plotly_chart(fig_scatter, use_container_width=True)
+
+with col3:
+    # Botão para criar o histograma de preço
+    if st.button('Criar Histograma de Preço'):
+        st.write('Distribuição dos Preços dos Veículos')
+        fig_price_hist = px.histogram(car_data, x='price', color_discrete_sequence=['#ff7f0e'],
+                                      title='Distribuição de Preços dos Veículos')
+        st.plotly_chart(fig_price_hist, use_container_width=True)
+
+# Organizando mais gráficos em outra seção
+st.subheader('Análises Detalhadas')
+
+# Exibição de gráficos mais detalhados
+col4, col5 = st.columns(2)
+
+with col4:
+    # Gráfico de barras para contagem de modelos de veículos
+    if st.checkbox('Mostrar Gráfico de Barras para Contagem de Modelos'):
+        st.write('Contagem de Modelos de Veículos no Conjunto de Dados')
+        fig_model_bar = px.bar(car_data['model'].value_counts().reset_index(),
+                               x='index', y='model', title="Contagem de Modelos de Veículos",
+                               labels={'index': 'Modelo', 'model': 'Contagem'},
+                               color_discrete_sequence=['#2ca02c'])
+        st.plotly_chart(fig_model_bar, use_container_width=True)
+
+with col5:
+    # Box plot para comparar preços por tipo de combustível
+    if st.checkbox('Mostrar Box Plot de Preço por Tipo de Combustível'):
+        st.write('Comparação de Preços por Tipo de Combustível')
+        fig_box = px.box(car_data, x="fuel", y="price", color='fuel',
+                         title="Preço por Tipo de Combustível",
+                         labels={'fuel': 'Tipo de Combustível', 'price': 'Preço'},
+                         color_discrete_sequence=px.colors.qualitative.Pastel)
+        st.plotly_chart(fig_box, use_container_width=True)
+
+# Finalização com um rodapé ou mensagem adicional
+st.write("---")
+st.write("Aplicativo desenvolvido para análise exploratória de veículos usados.")
+
+# Função adicional para organizar o layout e melhorar a experiência do usuário
+def load_data(file_path):
+    """
+    Função para carregar os dados de veículos do arquivo CSV.
+    """
+    return pd.read_csv(file_path)
