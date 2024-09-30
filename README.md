@@ -1,10 +1,10 @@
-##  Projeto Veículos - Sprint 5 - TripleTen (DA-15)
+#  Projeto Veículos - Sprint 5 - TripleTen (DA-15)
 
-# Análise de Dados de Veículos - Streamlit App
+## Análise de Dados de Veículos - Streamlit App
 
 Este é um aplicativo web interativo de visualização de dados, desenvolvido com **Streamlit** e **Plotly**, que permite explorar um conjunto de dados de vendas de veículos. O objetivo do aplicativo é fornecer aos usuários uma maneira intuitiva de visualizar e analisar a quilometragem (`odometer`) e o preço (`price`) dos veículos através de gráficos dinâmicos.
 
-## Funcionalidades
+### Funcionalidades
 
 - **Histograma**: Permite ao usuário visualizar a distribuição da quilometragem dos veículos através de um histograma.
   
@@ -15,7 +15,7 @@ Este é um aplicativo web interativo de visualização de dados, desenvolvido co
   - Ao marcar **Criar um gráfico de dispersão**, o gráfico de dispersão é gerado.
   - Ambas as caixas de seleção podem ser ativadas simultaneamente para exibir os dois gráficos.
 
-## Como Usar
+### Como Usar
 
 1. **Instalar as Dependências**: Para instalar as dependências necessárias, execute o comando abaixo em seu terminal:
 
@@ -34,13 +34,13 @@ Este é um aplicativo web interativo de visualização de dados, desenvolvido co
    - Selecione a opção "Criar um gráfico de dispersão" para visualizar a relação entre `odometer` e `price`.
    - Marque ambas as caixas de seleção para ver os dois gráficos simultaneamente.
 
-## Estrutura do Projeto
+### Estrutura do Projeto
 
 - **app.py**: Arquivo principal que contém o código do aplicativo Streamlit.
 - **vehicles.csv**: Conjunto de dados contendo informações sobre veículos.
 - **requirements.txt**: Lista de bibliotecas necessárias para rodar o projeto.
 
-## Exemplo de Uso
+### Exemplo de Uso
 
 Uma vez que o aplicativo esteja rodando, você pode interagir com ele e visualizar os dados de quilometragem e preço dos veículos:
 
@@ -48,13 +48,13 @@ Uma vez que o aplicativo esteja rodando, você pode interagir com ele e visualiz
 - O **gráfico de dispersão** será exibido ao selecionar a opção "Criar um gráfico de dispersão".
 - Você pode gerar ambos os gráficos simultaneamente selecionando ambas as caixas de seleção.
 
-## Requisitos
+### Requisitos
 
 - Python 3.7 ou superior
 - Streamlit
 - Pandas
 - Plotly
 
-## Conjunto de Dados
+### Conjunto de Dados
 
 O conjunto de dados utilizado no projeto está no arquivo `vehicles.csv`, que contém informações sobre quilometragem (`odometer`), preço (`price`), e outras características de veículos listados para venda.
