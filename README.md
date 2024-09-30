@@ -1,61 +1,76 @@
-# vehicles_project_sprint5
-Projeto - Sprint 5 - TripleTen (DA-15)
+# **Projeto Veículos - Sprint 5 - TripleTen (DA-15)**
 
-# Análise de Dados de Veículos - Streamlit App
+## 🚗 **Análise de Dados de Veículos - Streamlit App** 🚗
 
-Este é um aplicativo web interativo de visualização de dados, desenvolvido com **Streamlit** e **Plotly**, que permite explorar um conjunto de dados de vendas de veículos. O objetivo do aplicativo é fornecer aos usuários uma maneira intuitiva de visualizar e analisar a quilometragem (`odometer`) e o preço (`price`) dos veículos através de gráficos dinâmicos.
+Este é um aplicativo web interativo de visualização de dados, desenvolvido com **Streamlit** e **Plotly**, que permite explorar um conjunto de dados de vendas de veículos. O objetivo do aplicativo é fornecer uma maneira **intuitiva** e **dinâmica** para os usuários visualizarem e analisarem a **quilometragem** (`odometer`) e o **preço** (`price`) dos veículos por meio de gráficos interativos.
 
-## Funcionalidades
+---
 
-- **Histograma**: Permite ao usuário visualizar a distribuição da quilometragem dos veículos através de um histograma.
+### **⚙️ Funcionalidades**
+
+- **Histograma**: Visualiza a **distribuição da quilometragem** dos veículos.
   
-- **Gráfico de Dispersão**: Exibe a relação entre a quilometragem (`odometer`) e o preço (`price`) dos veículos.
+- **Gráfico de Dispersão**: Exibe a **relação** entre **quilometragem** (`odometer`) e **preço** (`price`) dos veículos.
 
-- **Seleção Interativa**: O usuário pode selecionar quais gráficos deseja visualizar utilizando caixas de seleção:
-  - Ao marcar **Criar um histograma**, o histograma é gerado.
-  - Ao marcar **Criar um gráfico de dispersão**, o gráfico de dispersão é gerado.
-  - Ambas as caixas de seleção podem ser ativadas simultaneamente para exibir os dois gráficos.
+- **Seleção Interativa**: O usuário pode selecionar quais gráficos deseja visualizar usando caixas de seleção:
+  - 🔳 **Criar um histograma**: Gera o histograma da coluna `odometer`.
+  - 🔳 **Criar um gráfico de dispersão**: Exibe o gráfico de dispersão mostrando a relação entre `odometer` e `price`.
+  - **Ambas as opções podem ser selecionadas ao mesmo tempo** para visualizar os dois gráficos simultaneamente.
 
-## Como Usar
+---
 
-1. **Instalar as Dependências**: Para instalar as dependências necessárias, execute o comando abaixo em seu terminal:
+### **📝 Como Usar**
 
+1. **Instalar Dependências**: Para instalar as bibliotecas necessárias, execute o seguinte comando no terminal:
    ```bash
    pip install -r requirements.txt
    ```
 
-2. **Executar o Aplicativo**: Após instalar as dependências, inicie o aplicativo com o comando:
-
+2. **Executar o Aplicativo**: Após a instalação das dependências, inicie o aplicativo com o comando:
    ```bash
    streamlit run app.py
    ```
 
-3. **Interagir com o Aplicativo**: Ao abrir o aplicativo, você verá caixas de seleção:
-   - Selecione a opção "Criar um histograma" para visualizar o histograma da coluna `odometer`.
-   - Selecione a opção "Criar um gráfico de dispersão" para visualizar a relação entre `odometer` e `price`.
-   - Marque ambas as caixas de seleção para ver os dois gráficos simultaneamente.
+3. **Interagir com o Aplicativo**: No aplicativo, você verá opções de seleção:
+   - **Histograma**: Marque "Criar um histograma" para visualizar a distribuição da coluna `odometer`.
+   - **Gráfico de Dispersão**: Marque "Criar um gráfico de dispersão" para visualizar a relação entre **quilometragem** e **preço**.
+   - **Ambas as opções**: Marque ambas as opções para visualizar os dois gráficos simultaneamente.
 
-## Estrutura do Projeto
+---
 
-- **app.py**: Arquivo principal que contém o código do aplicativo Streamlit.
-- **vehicles.csv**: Conjunto de dados contendo informações sobre veículos.
-- **requirements.txt**: Lista de bibliotecas necessárias para rodar o projeto.
+### **📁 Estrutura do Projeto**
 
-## Exemplo de Uso
+- **`app.py`**: Arquivo principal que contém o código do aplicativo Streamlit.
+- **`vehicles.csv`**: Conjunto de dados com informações sobre veículos.
+- **`requirements.txt`**: Arquivo com as dependências necessárias para rodar o projeto.
 
-Uma vez que o aplicativo esteja rodando, você pode interagir com ele e visualizar os dados de quilometragem e preço dos veículos:
+---
 
-- O **histograma** será exibido ao selecionar a opção "Criar um histograma".
-- O **gráfico de dispersão** será exibido ao selecionar a opção "Criar um gráfico de dispersão".
-- Você pode gerar ambos os gráficos simultaneamente selecionando ambas as caixas de seleção.
+### **🔍 Exemplo de Uso**
 
-## Requisitos
+- O **histograma** será exibido ao marcar a opção **Criar um histograma**.
+- O **gráfico de dispersão** será gerado ao selecionar **Criar um gráfico de dispersão**.
+- Marcar ambas as opções permitirá visualizar os dois gráficos ao mesmo tempo para uma análise mais completa.
 
-- Python 3.7 ou superior
-- Streamlit
-- Pandas
-- Plotly
+---
 
-## Conjunto de Dados
+### **📋 Requisitos**
 
-O conjunto de dados utilizado no projeto está no arquivo `vehicles.csv`, que contém informações sobre quilometragem (`odometer`), preço (`price`), e outras características de veículos listados para venda.
+- **Python 3.7** ou superior
+- **Streamlit**
+- **Pandas**
+- **Plotly**
+
+---
+
+### **📊 Conjunto de Dados**
+
+O conjunto de dados utilizado está no arquivo **`vehicles.csv`**, contendo informações como **quilometragem** (`odometer`), **preço** (`price`), e outras características de veículos à venda.
+
+---
+
+### **🌐 Visualização do Aplicativo**
+
+A visualização interativa do aplicativo está disponível online. **Acesse através deste link** para ver o projeto em ação:
+
+🔗 **Visualizar Aplicativo no Render: [https://vehicles-project-sprint5.onrender.com](https://vehicles-project-sprint5.onrender.com)**
