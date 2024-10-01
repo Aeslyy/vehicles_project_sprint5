@@ -2,7 +2,7 @@
 
 ## 🚗 **Análise de Dados de Veículos - Streamlit App** 🚗
 
-Este é um aplicativo web interativo de visualização de dados, desenvolvido com **Streamlit** e **Plotly**, que permite explorar um conjunto de dados de vendas de veículos. O objetivo do aplicativo é fornecer uma maneira **intuitiva** e **dinâmica** para os usuários visualizarem e analisarem a **quilometragem** (`odometer`) e o **preço** (`price`) dos veículos por meio de gráficos interativos.
+Este é um aplicativo web interativo de visualização de dados, desenvolvido com **Streamlit** e **Plotly**, que permite explorar um conjunto de dados de vendas de veículos. O objetivo é fornecer uma maneira **intuitiva** e **dinâmica** para os usuários visualizarem e analisarem a **quilometragem** (`odometer`) e o **preço** (`price`) dos veículos por meio de gráficos interativos.
 
 ---
 
@@ -16,6 +16,10 @@ Este é um aplicativo web interativo de visualização de dados, desenvolvido co
   - 🔳 **Criar um histograma**: Gera o histograma da coluna `odometer`.
   - 🔳 **Criar um gráfico de dispersão**: Exibe o gráfico de dispersão mostrando a relação entre `odometer` e `price`.
   - **Ambas as opções podem ser selecionadas ao mesmo tempo** para visualizar os dois gráficos simultaneamente.
+
+- **Gráfico de Barras**: Conta e exibe os modelos de veículos.
+  
+- **Box Plot**: Compara os preços dos veículos de acordo com o tipo de combustível.
 
 ---
 
@@ -31,10 +35,11 @@ Este é um aplicativo web interativo de visualização de dados, desenvolvido co
    streamlit run app.py
    ```
 
-3. **Interagir com o Aplicativo**: No aplicativo, você verá opções de seleção:
-   - **Histograma**: Marque "Criar um histograma" para visualizar a distribuição da coluna `odometer`.
+3. **Interagir com o Aplicativo**: No aplicativo, você verá várias opções de visualizações interativas:
+   - **Histograma**: Marque "Criar um histograma" para visualizar a distribuição da quilometragem.
    - **Gráfico de Dispersão**: Marque "Criar um gráfico de dispersão" para visualizar a relação entre **quilometragem** e **preço**.
-   - **Ambas as opções**: Marque ambas as opções para visualizar os dois gráficos simultaneamente.
+   - **Gráfico de Barras**: Selecione para contar os modelos de veículos.
+   - **Box Plot**: Compare os preços com base no tipo de combustível.
 
 ---
 
@@ -50,7 +55,7 @@ Este é um aplicativo web interativo de visualização de dados, desenvolvido co
 
 - O **histograma** será exibido ao marcar a opção **Criar um histograma**.
 - O **gráfico de dispersão** será gerado ao selecionar **Criar um gráfico de dispersão**.
-- Marcar ambas as opções permitirá visualizar os dois gráficos ao mesmo tempo para uma análise mais completa.
+- O **gráfico de barras** e o **box plot** também podem ser ativados de acordo com as preferências de visualização do usuário.
 
 ---
 
@@ -73,4 +78,4 @@ O conjunto de dados utilizado está no arquivo **`vehicles.csv`**, contendo info
 
 A visualização interativa do aplicativo está disponível online. **Acesse através deste link** para ver o projeto em ação:
 
-🔗 **Visualizar Aplicativo no Render: [https://vehicles-project-sprint5.onrender.com](https://vehicles-project-sprint5.onrender.com)**
+🔗 **[Visualizar Aplicativo no Render](https://vehicles-project-sprint5.onrender.com)**
