@@ -22,7 +22,7 @@ if build_scatter:
     fig_scatter = px.scatter(car_data, x="odometer", y="price", title="Dispersão: Odometer vs Preço")
     st.plotly_chart(fig_scatter, use_container_width=True)
 '''
-# Versão melhorada
+# Versão melhorada, porém não melhorou, vou deixar a de cima sem alteração
 import pandas as pd
 import plotly.express as px
 import streamlit as st
@@ -86,11 +86,14 @@ with col4:
     # Gráfico de barras para contagem de modelos de veículos
     if st.checkbox('Mostrar Gráfico de Barras para Contagem de Modelos'):
         st.write('Contagem de Modelos de Veículos no Conjunto de Dados')
-        fig_model_bar = px.bar(car_data['model'].value_counts().reset_index(),
-                               x='index', y='model', title="Contagem de Modelos de Veículos",
-                               labels={'index': 'Modelo', 'model': 'Contagem'},
-                               color_discrete_sequence=['#2ca02c'])
+        model_counts = car_data['model'].value_counts().reset_index()  # Corrigindo o reset_index
+        model_counts.columns = ['model', 'count']  # Renomeando as colunas corretamente
+        fig_model_bar = px.bar(model_counts, x='model', y='count', 
+                            title="Contagem de Modelos de Veículos",
+                            labels={'model': 'Modelo', 'count': 'Contagem'},
+                            color_discrete_sequence=['#2ca02c'])
         st.plotly_chart(fig_model_bar, use_container_width=True)
+
 
 with col5:
     # Box plot para comparar preços por tipo de combustível
